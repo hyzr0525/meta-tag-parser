@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-function ImputForm() {
+function ImputForm({setMetaData}) {
 
     const [input, setInput] = useState()
 
@@ -9,18 +9,25 @@ function ImputForm() {
         setInput(e.target.value);
     }
 
-    console.log(input)
+    function parser(e){
+        e.preventDefault();
+    const parser = new DOMParser();
+    const parsedDocument = parser.parseFromString(`${input}`, "text/xml");
+    const metaData = parsedDocument.querySelectorAll("metadata")
+    setMetaData(metaData)
+    }
 
+    
   return (
     <div>
-        <form >
+        <form onSubmit={parser}>
             <textarea
             type= 'text'
             name='input'
             placeholder= "Pase Your Data Here"
-            onChange={formFill}
+            onChange= {formFill}
             />
-            <button>submit</button>
+            <button type='submit'>Parse</button>
         </form>
     </div>
   )
