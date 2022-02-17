@@ -1,13 +1,14 @@
 import React from 'react'
 
-function TableData() {
+function TableData({tag, linkProp, linkVal, metaProp, metaVal}) {
+
+    console.log(tag)
   return (
-    <div>
-        <tr>
-          <th>Type</th>
-          <th>Value</th>
-        </tr>
-    </div>
+    <tr>
+        <td>{tag}/{linkProp}{metaProp}</td>
+        <td>{linkVal}{metaVal}</td>
+    </tr>
+
   )
 }
 

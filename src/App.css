@@ -8,3 +8,14 @@ textarea {
   border-radius: 5px;
   float: left;
 }
+
+table {
+  width: 250px;
+  text-align: left;
+}
+
+table, th,td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  
+}

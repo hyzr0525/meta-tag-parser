@@ -14,7 +14,8 @@ function ImputForm({setMetaData}) {
     const parser = new DOMParser();
     const parsedDocument = parser.parseFromString(`${input}`, "text/xml");
     const metaData = parsedDocument.querySelectorAll("metadata")
-    setMetaData(metaData)
+    setMetaData(metaData[0].children)
+    console.log(metaData)
     }
 
     

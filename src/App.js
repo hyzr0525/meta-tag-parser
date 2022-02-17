@@ -4,7 +4,7 @@ import ImputForm from './Component/ImputForm';
 import {useState} from 'react'
 function App() {
 
-  const [metaData, setMetaData] = useState("")
+  const [metaData, setMetaData] = useState([])
 
   return (
     <div className="App">
