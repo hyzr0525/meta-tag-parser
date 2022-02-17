@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <h1> Meta Tag Parser</h1>
       <ImputForm setMetaData={setMetaData}/>
-      <ParsedTable metaData={metaData}/>
+      <ParsedTable metaData={metaData} setMetaData={setMetaData}/>
     </div>
   );
 }
