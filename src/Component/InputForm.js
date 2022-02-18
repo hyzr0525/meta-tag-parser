@@ -4,7 +4,7 @@ import {Button} from '@mui/material'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 
 
-function ImputForm({setMetaData}) {
+function InputForm({setMetaData}) {
 
     const [input, setInput] = useState()
 
@@ -18,7 +18,6 @@ function ImputForm({setMetaData}) {
     const parsedDocument = parser.parseFromString(`${input}`, "text/xml");
     const metaData = parsedDocument.querySelectorAll("metadata")
     setMetaData(metaData[0].children)
-    console.log(metaData)
     }
 
     
@@ -28,7 +27,7 @@ function ImputForm({setMetaData}) {
             <textarea
             type= 'text'
             name='input'
-            placeholder= "Pase Your Data Here"
+            placeholder= "Paste Your Data Here"
             onChange= {formFill}
             />
             <Button sx={{ bgcolor: 'text.secondary'}} variant="contained" startIcon={<SettingsOutlinedIcon />} type='submit'>Parse</Button>
@@ -37,4 +36,5 @@ function ImputForm({setMetaData}) {
   )
 }
 
-export default ImputForm
+
+export default InputForm

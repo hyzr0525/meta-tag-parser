@@ -71,7 +71,7 @@ function ParsedTable({metaData, setMetaData}) {
 
   const sortIcon = (sortOrder === "ASC") ? <ArrowDropUpSharpIcon/>:<ArrowDropDownSharpIcon/>
 
-    const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={data.getAttribute("rel")} metaProp={data.getAttribute("property")}  value={data.textContent || data.getAttribute("href")} />)
+  const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={data.getAttribute("rel")} metaProp={data.getAttribute("property")}  value={data.textContent || data.getAttribute("href")} />)
 
   return (
     <TableContainer component={Paper}>
