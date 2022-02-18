@@ -1,5 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
+import {Button} from '@mui/material'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+
 
 function ImputForm({setMetaData}) {
 
@@ -28,7 +31,7 @@ function ImputForm({setMetaData}) {
             placeholder= "Pase Your Data Here"
             onChange= {formFill}
             />
-            <button type='submit'>Parse</button>
+            <Button sx={{ bgcolor: 'text.secondary'}} variant="contained" startIcon={<SettingsOutlinedIcon />} type='submit'>Parse</Button>
         </form>
     </div>
   )
