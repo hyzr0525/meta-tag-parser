@@ -15,7 +15,8 @@ import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 function ParsedTable({metaData, setMetaData}) {
  
   const [sortOrder, setSortOrder] = useState("ASC")
-
+  const sortIcon = (sortOrder === "ASC") ? <ArrowDropUpSharpIcon/>:<ArrowDropDownSharpIcon/>
+  
   const handleSort = (colName) => {
 
     if (colName === "tag"){
@@ -68,8 +69,6 @@ function ParsedTable({metaData, setMetaData}) {
     }
 
   }
-
-  const sortIcon = (sortOrder === "ASC") ? <ArrowDropUpSharpIcon/>:<ArrowDropDownSharpIcon/>
 
   const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={data.getAttribute("rel")} metaProp={data.getAttribute("property")}  value={data.textContent || data.getAttribute("href")} />)
 
