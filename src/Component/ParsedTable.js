@@ -70,8 +70,8 @@ function ParsedTable({metaData, setMetaData}) {
 
   }
 
-  const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={data.getAttribute("rel")} metaProp={data.getAttribute("property")}  value={data.textContent || data.getAttribute("href")} />)
-
+  const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={Array.from(data.attributes)[0]?.textContent} metaProp={Array.from(data.attributes)[1]?.name}  value={data.textContent || data.getAttribute("href") || Array.from(data.attributes)[1].textContent} />)
+  
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }}>
@@ -90,3 +90,5 @@ function ParsedTable({metaData, setMetaData}) {
 }
 
 export default ParsedTable
+
+// const dataRow = Array.from(metaData)?.map((data) => <TableData tag={data.tagName}  linkProp={Array.from(data.attributes)[0].name} metaProp={data.getAttribute("property")}  value={data.textContent || data.getAttribute("href")} />)

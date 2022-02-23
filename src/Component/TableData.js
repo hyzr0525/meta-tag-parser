@@ -3,10 +3,12 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow'
 
 function TableData({tag, linkProp, metaProp, value}) {
+  console.log(linkProp)
+  console.log(value)
 
   return (
     <TableRow>
-        <TableCell align="left">{tag}/{linkProp}{metaProp}</TableCell>
+        <TableCell align="left">{tag}/{linkProp}/{metaProp}</TableCell>
         <TableCell align="left">{value}</TableCell>
     </TableRow>
 
